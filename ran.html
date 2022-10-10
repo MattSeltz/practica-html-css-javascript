@@ -111,18 +111,22 @@
 	<div class="cont">Color Random</div>
 	<div id="color" class="vs"></div>
 	<div class="btn">
-		<button onclick="ran()">Color Random</button>
+		<button id="ran">Color Random</button>
 	</div>
 
 <script>
-	const ran = () => {
-		let min = 100;
-		let max = 999999;
-		let ran = Math.floor(Math.random() * (max - min + 1) + min);
+	const col = document.getElementById("ran");
+
+	const ran = (min,max) => {
+		let random = Math.floor(Math.random() * (max - min + 1) + min);
 		let x = document.getElementById("color");
-		x.style.background = "#" + ran;
-		x.innerHTML = "#" + ran;
+		x.style.background = "#" + random;
+		x.innerHTML = "#" + random;
 	}
+	col.addEventListener("click",() => {
+		ran(100,999999);
+	});
+
 </script>
 </body>
 </html>

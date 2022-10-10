@@ -122,7 +122,7 @@
 		</ul>
 	</div>
 
-	<div class="hero">Bienvenidos</div>
+	<div class="contenido"></div>
 
 	<script>
 		const btn = document.getElementById("btn");
@@ -144,12 +144,16 @@
 		const slider = document.getElementById("slider");
 		const playground = document.getElementById("playground");
 
+		const contenido = document.querySelector(".contenido");
+
 		home.addEventListener("click",() => {
-			alert("home");
+			contenido.innerHTML = `<h1>Bienvenidos Dinamico</h1>`;
+			contenido.classList.add("hero");
+			menu.style.transform = "translateY(-100%)";
 		});
 
 		contador.addEventListener("click",() => {
-			alert("contador");
+			contenido.innerHTML = "cont.html";
 		});
 
 		colorRandom.addEventListener("click",() => {
