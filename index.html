@@ -75,9 +75,9 @@
 		}
 
 		a:hover{
-			color: #fff;
+			color: #000;
 			text-shadow: 2.5px 2.5px 2.5px #0ff;
-			background: #0ff;
+			background: #fff;
 		}
 
 		.hero{
@@ -104,21 +104,21 @@
 
 	<div class="menu">
 		<ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="cont.html">Contador</a></li>
-		<li><a href="ran.html">Color Random</a></li>
-		<li><a href="gameSimple.html">Piedra, Papel o Tijera</a></li>
-		<li><a href="ascensor.html">Ascensor</a></li>
-		<li><a href="clickMe.html">ClickMe</a></li>
-		<li><a href="tablaMul.html">Tablas de Multiplicación</a></li>
-		<li><a href="galeria.html">Galeria</a></li>
-		<li><a href="contraseña.html">PasswordGame</a></li>
-		<li><a href="cronometro.html">Cronometro</a></li>
-		<li><a href="colorPicker.html">Color Picker</a></li>
-		<li><a href="calculadora.html">Calculadora(CSS)</a></li>
-		<li><a href="PasswordRandom.html">PasswordRandom</a></li>
-		<li><a href="slider.html">Slider</a></li>
-		<li><a href="play.html">PlayGround</a></li>
+		<li><a id="home" href="#index.html">Home</a></li>
+		<li><a id="contador" href="#cont.html">Contador</a></li>
+		<li><a id="color-random" href="#ran.html">Color Random</a></li>
+		<li><a id="piedra-papel-o-tijera" href="#gameSimple.html">Piedra, Papel o Tijera</a></li>
+		<li><a id="ascensor" href="#ascensor.html">Ascensor</a></li>
+		<li><a id="click-me" href="#clickMe.html">ClickMe</a></li>
+		<li><a id="tablas-de-multiplicacion" href="#tablaMul.html">Tablas de Multiplicación</a></li>
+		<li><a id="galeria" href="#galeria.html">Galeria</a></li>
+		<li><a id="password-game" href="#contraseña.html">PasswordGame</a></li>
+		<li><a id="cronometro" href="#cronometro.html">Cronometro</a></li>
+		<li><a id="color-picker" href="#colorPicker.html">Color Picker</a></li>
+		<li><a id="calculadora" href="#calculadora.html">Calculadora(CSS)</a></li>
+		<li><a id="password-random" href="#PasswordRandom.html">PasswordRandom</a></li>
+		<li><a id="slider" href="#slider.html">Slider</a></li>
+		<li><a id="playground" href="#play.html">PlayGround</a></li>
 		</ul>
 	</div>
 
@@ -127,6 +127,83 @@
 	<script>
 		const btn = document.getElementById("btn");
 		const menu = document.querySelector(".menu");
+
+		const home = document.getElementById("home");
+		const contador = document.getElementById("contador");
+		const colorRandom = document.getElementById("color-random");
+		const piedraPapelOTijera = document.getElementById("piedra-papel-o-tijera");
+		const ascensor = document.getElementById("ascensor");
+		const clickMe = document.getElementById("click-me");
+		const tablasDeMultiplicacion = document.getElementById("tablas-de-multiplicacion");
+		const galeria = document.getElementById("galeria");
+		const passwordGame = document.getElementById("password-game");
+		const cronometro = document.getElementById("cronometro");
+		const colorPicker = document.getElementById("color-picker");
+		const calculadora = document.getElementById("calculadora");
+		const passwordRandom = document.getElementById("password-random");
+		const slider = document.getElementById("slider");
+		const playground = document.getElementById("playground");
+
+		home.addEventListener("click",() => {
+			alert("home");
+		});
+
+		contador.addEventListener("click",() => {
+			alert("contador");
+		});
+
+		colorRandom.addEventListener("click",() => {
+			alert("colorRandom");
+		});
+
+		piedraPapelOTijera.addEventListener("click",() => {
+			alert("piedraPapelOTijera");
+		});
+		
+		ascensor.addEventListener("click",() => {
+			alert("ascensor");
+		});
+
+		clickMe.addEventListener("click",() => {
+			alert("clickMe");
+		});
+
+		tablasDeMultiplicacion.addEventListener("click",() => 
+		{
+			alert("TablasDeMultiplicacion");
+		});
+
+		galeria.addEventListener("click",() => {
+			alert("galeria");
+		});
+
+		passwordGame.addEventListener("click",() => {
+			alert("passwordGame");
+		});
+
+		cronometro.addEventListener("click",() => {
+			alert("cronometro");
+		});
+
+		colorPicker.addEventListener("click",() => {
+			alert("colorPicker");
+		});
+
+		calculadora.addEventListener("click",() => {
+			alert("calculadora");
+		});
+		
+		passwordRandom.addEventListener("click",() => {
+			alert("passwordRandom");
+		});
+
+		slider.addEventListener("click",() => {
+			alert("slider");
+		});
+
+		playground.addEventListener("click",() => {
+			alert("playground");
+		});
 
 		btn.addEventListener("click",() => {
 			if(menu.style.transform == "translateY(-100%)") {
