@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	body{
+		background: #0aa;
+	}
+
+	header{
+		height: 10vh;
+		background: linear-gradient(to right, #666, #333);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+	}
+
+	h1{
+		color: #0ff;
+		text-shadow: 2.5px 2.5px 2.5px #000;
+		transition: 2.5s;
+	}
+
+	h1:hover{
+		letter-spacing: 10px;
+	}
+
+	nav{
+		background: #000;
+		padding: 10px;
+		border-radius: 25px;
+	}
+
+	a{
+		text-decoration: none;
+		color: #0ff;
+		margin: 5px;
+		transition: .5s;
+	}
+
+	a:hover{
+		color: #fff;
+		text-shadow: 2.5px 2.5px 2.5px #0ff;
+	}
+
+
+	.box{
+		cursor: pointer;
+		height: 100px;
+		width: 100px;
+		background: #000;
+		color: #0ff;
+		border-radius: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-weight: bolder;
+	}
+
+	section{
+		height: 10vh;
+		background: #345;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px;
+	}
+
+	h2{
+		font-size: 30px;
+		letter-spacing: 5px;
+		text-shadow: 2.5px 2.5px #0aa;
+		transition: .5s;
+	}
+
+	h2:hover{
+		transform: translate(2.5px, 2.5px);
+		text-shadow: 2.5px 2.5px #000;
+		color: #0ff;
+	}
+	.let{
+		background: #000;
+		height: 100%;
+		width: 550px;
+		color: #0ff;
+		border-radius: 50px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	p{
+		letter-spacing: 2.5px;
+		border-bottom: 2.5px solid #0ff;
+	}
+
+	#b2{
+		display: none;
+		position: relative;
+		top: -100px;
+	}
+
+	#b3{
+		display: none;
+		position: relative;
+		top: -200px;
+	}
+
+	.win{
+		height: 80vh;
+		width: 100%;
+		background: #000;
+		position: absolute;
+		top: 20vh;
+		display: none;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	h3{
+		color: #0ff;
+		font-size: 50px;
+		text-shadow: 5px 5px #345;
+	}
+
+	button{
+		height: 100px;
+		width: 100px;
+		border-radius: 15px;
+		border: 5px solid #0ff;
+		background: #fff;
+		font-weight: bolder;
+		box-shadow: 5px 5px #fff;
+		cursor: pointer;
+		transition: .5s;
+	}
+
+	button:hover{
+		transform: translate(5px, 5px);
+		box-shadow: none;
+		border-color: #fff;
+		background: #0ff;
+	}
+</style>
+<body>
+	<header>
+		<h1>Matías Seltzer</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="cont.html">Contador</a>
+			<a href="ran.html">Color Random</a>
+			<a href="gameSimple.html">Piedra, Papel o Tijera</a>
+			<a href="ascensor.html">Ascensor</a>
+			<a href="clickMe.html">ClickMe</a>
+			<a href="tablaMul.html">Tablas de Multiplicación</a>
+			<a href="galeria.html">Galeria</a>
+			<a href="contraseña.html">PasswordGame</a>
+			<a href="cronometro.html">Cronometro</a>
+			<a href="colorPicker.html">Color Picker</a>
+			<a href="calculadora.html">Calculadora(CSS)</a>
+			<a href="PasswordRandom.html">PasswordRandom</a>
+			<a href="slider.html">Slider</a>
+			<a href="play.html">PlayGround</a>
+		</nav>
+	</header>
+
+	<section>
+		<h2>ClickMe</h2>
+		<div class="let"><p id="p1">0P:1J</p><p id="p2">25P:2J</p><p id="p3">50P:3J</p><p id="win">100P:You Win</p></div>
+	</section>
+
+	<div id="b1" class="box">Clickeame <br> <span id="numerador1">0</span></div>
+	<div id="b2" class="box">Clickeame <br> <span id="numerador2">0</span></div>
+	<div id="b3" class="box">Clickeame <br> <span id="numerador3">0</span></div>
+
+	<div class="win">
+		<h3>¡GANASTE!</h3>
+		<button id="refresh">Volver a jugar</button>
+	</div>
+
+<script>
+	let minW = 1;
+	let maxW = 1100;	
+	let minH = 1;
+	let maxH = 350;
+
+	let box1 = document.getElementById("b1");
+	let box2 = document.getElementById("b2");
+	let box3 = document.getElementById("b3");
+	let numerador1 = document.getElementById("numerador1");
+	let numerador2 = document.getElementById("numerador2");
+	let numerador3 = document.getElementById("numerador3");
+	let win = document.querySelector(".win");
+
+	let button = document.getElementById("refresh").addEventListener("click",() => {
+		location.reload();
+	});
+
+	let x1 = 0;
+	let x2 = 25;
+	let x3 = 50;
+
+	box1.addEventListener("click",() => {
+		let ranW = Math.floor(Math.random() * (maxW - minW + 1) + minW);
+		let ranH = Math.floor(Math.random() * (maxH - minH + 1) + minH);
+		box1.style.transform = `translate(${ranW}px, ${ranH}px)`;
+		x1++
+		numerador1.innerHTML = x1;
+
+		if(x1 >= 25) {
+			box2.style.display = "flex";
+
+			if(x1 >= 50 && x2 >= 50) {
+				box3.style.display = "flex";
+			
+				if(x1 >= 100 && x2 >= 100 && x3 >= 100) {
+					win.style.display = "flex";
+				}
+			}
+		}
+	});
+
+	box2.addEventListener("click",() => {
+		let ranW = Math.floor(Math.random() * (maxW - minW + 1) + minW);
+		let ranH = Math.floor(Math.random() * (maxH - minH + 1) + minH);
+		box2.style.transform = `translate(${ranW}px, ${ranH}px)`;
+		x2++
+		numerador2.innerHTML = x2;
+
+		if(x1 >= 25) {
+			box2.style.display = "flex";
+
+			if(x1 >= 50 && x2 >= 50) {
+				box3.style.display = "flex";
+			
+				if(x1 >= 100 && x2 >= 100 && x3 >= 100) {
+					win.style.display = "flex";
+				}
+			}
+		}
+	});
+
+	box3.addEventListener("click",() => {
+		let ranW = Math.floor(Math.random() * (maxW - minW + 1) + minW);
+		let ranH = Math.floor(Math.random() * (maxH - minH + 1) + minH);
+		box3.style.transform = `translate(${ranW}px, ${ranH}px)`;
+		x3++
+		numerador3.innerHTML = x3;
+
+		if(x1 >= 25) {
+			box2.style.display = "flex";
+
+			if(x1 >= 50 && x2 >= 50) {
+				box3.style.display = "flex";
+			
+				if(x1 >= 100 && x2 >= 100 && x3 >= 100) {
+					win.style.display = "flex";
+				}
+			}
+		}
+	});
+</script>
+</body>
+</html>

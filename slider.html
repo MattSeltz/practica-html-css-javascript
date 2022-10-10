@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		header{
+			height: 10vh;
+			background: linear-gradient(to right, #666, #333);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+		}
+
+		h1{
+			color: #0ff;
+			text-shadow: 2.5px 2.5px 2.5px #000;
+			transition: 2.5s;
+		}
+
+		h1:hover{
+			letter-spacing: 10px;
+		}
+
+		nav{
+			background: #000;
+			padding: 10px;
+			border-radius: 25px;
+		}
+
+		a{
+			text-decoration: none;
+			color: #0ff;
+			margin: 5px;
+			transition: .5s;
+		}
+
+		a:hover{
+			color: #fff;
+			text-shadow: 2.5px 2.5px 2.5px #0ff;
+		}
+
+		.container{
+			height: 90vh;
+			background: #333;
+			border: 5px solid #0ff;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+
+		.slider{
+			height: 50%;
+			margin: 5px;
+			box-shadow: 0 0 50px #0ff;
+			border-radius: 5px;
+			width: 100%;
+			max-width: 650px;
+			transition: .5s;
+		}
+
+		.btn{
+			height: 45%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		button{
+			height: 100px;
+			width: 100px;
+			margin: 5px;
+			border-radius: 5px;
+			border: 2.5px solid #000;
+			box-shadow: 0 15px #000;
+			font-weight: bolder;
+			cursor: pointer;
+			transition: .5s;
+		}
+
+		button:active{
+			transform: translateY(15px);
+			box-shadow: none;
+			background: #000;
+			color: #0ff;
+		}
+
+		img{
+			height: 100%;
+			width: 100%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Matías Seltzer</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="cont.html">Contador</a>
+			<a href="ran.html">Color Random</a>
+			<a href="gameSimple.html">Piedra, Papel o Tijera</a>
+			<a href="ascensor.html">Ascensor</a>
+			<a href="clickMe.html">ClickMe</a>
+			<a href="tablaMul.html">Tablas de Multiplicación</a>
+			<a href="galeria.html">Galeria</a>
+			<a href="contraseña.html">PasswordGame</a>
+			<a href="cronometro.html">Cronometro</a>
+			<a href="colorPicker.html">Color Picker</a>
+			<a href="calculadora.html">Calculadora(CSS)</a>
+			<a href="PasswordRandom.html">PasswordRandom</a>
+			<a href="slider.html">Slider</a>
+			<a href="play.html">PlayGround</a>
+		</nav>
+	</header>
+
+	<div class="container">
+		<div class="slider">
+			<img id="slider">
+		</div>
+		<div class="btn">
+			<button id="back">Back</button>
+			<button id="random">Random</button>
+			<button id="next">Next</button>
+		</div>
+	</div>
+
+<script>
+	const slider = document.getElementById("slider");
+	const cont = document.querySelector(".slider");
+
+	const back = document.getElementById("back");
+	const random = document.getElementById("random");
+	const next = document.getElementById("next");
+
+	let img = ["https://fondosmil.com/fondo/11114.jpg","https://www.xtrafondos.com/wallpapers/resized/paisaje-digital-en-atardecer-5846.jpg?s=large","https://fondosmil.com/fondo/2255.jpg","http://www.solofondos.com/wp-content/uploads/2015/12/los-mejores-paisajes-del-mundo-para-fondo-de-pantalla-3.jpg","https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80","https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2019/12/fondo-pantalla-paisaje-header.jpg","https://fondosmil.com/fondo/49838.jpg","https://www.10wallpaper.com/wallpaper/medium/1305/Gorgeous_lake-Landscape_widescreen_wallpaper_medium.jpg","http://www.solofondos.com/wp-content/uploads/2016/09/Fondos-de-pantalla-paisajes-naturales.jpg"];
+
+	let i = 0;
+
+	const rand = (min,max) => {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	let intervalo;
+
+	random.addEventListener("click",() => {
+		intervalo = setInterval(() => {
+			slider.src = `${img[rand(0,8)]}`;
+			if(i > 8) {
+				i = 0;
+			}
+		},2500);
+	});
+
+	back.addEventListener("click",() => {
+		clearInterval(intervalo);
+		slider.src = `${img[i]}`;
+		i--;
+		if(i < 0) {
+			i = 8;
+		}
+	});
+
+	next.addEventListener("click",() => {
+		clearInterval(intervalo);
+		slider.src = `${img[i]}`;
+		i++;
+		if(i > 8) {
+			i = 0;
+		}
+	});
+
+	cont.addEventListener("click",() => {
+		if(cont.style.width <= "650px") {
+			cont.style.height = "88vh";
+			cont.style.width = "99%";
+			cont.style.position = "absolute";
+			cont.style.maxWidth = "100%";
+		}else{
+			cont.style.width = "100%";
+			cont.style.position = "static";
+			cont.style.height = "50%";
+			cont.style.maxWidth = "650px";
+		}
+	});
+</script>
+</body>
+</html>

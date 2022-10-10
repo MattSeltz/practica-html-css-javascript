@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Galeria</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.header{
+			height: 10vh;
+			background: #000;
+			line-height: 10vh;
+			color: #0ff;
+			text-align: center;
+			text-shadow: 2.5px 2.5px #0aa;
+			letter-spacing: 2.5px;
+			font-size: 20px;
+		}
+
+		.section{
+			height: 80vh;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		img{
+			width: 20%;
+			height: 40vh;
+			object-fit: cover;
+			border: 2.5px solid #000;
+			cursor: pointer;
+			transition: .5s;
+		}
+
+		img:hover{
+			border-color: #099;
+		}
+
+		header{
+			height: 10vh;
+			background: linear-gradient(to right, #666, #333);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+		}
+
+		h1{
+			color: #0ff;
+			text-shadow: 2.5px 2.5px 2.5px #000;
+			transition: 2.5s;
+		}
+
+		h1:hover{
+			letter-spacing: 10px;
+		}
+
+		nav{
+			background: #000;
+			padding: 10px;
+			border-radius: 25px;
+		}
+
+		a{
+			text-decoration: none;
+			color: #0ff;
+			margin: 5px;
+			transition: .5s;
+		}
+
+		a:hover{
+			color: #fff;
+			text-shadow: 2.5px 2.5px 2.5px #0ff;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Matías Seltzer</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="cont.html">Contador</a>
+			<a href="ran.html">Color Random</a>
+			<a href="gameSimple.html">Piedra, Papel o Tijera</a>
+			<a href="ascensor.html">Ascensor</a>
+			<a href="clickMe.html">ClickMe</a>
+			<a href="tablaMul.html">Tablas de Multiplicación</a>
+			<a href="galeria.html">Galeria</a>
+			<a href="contraseña.html">PasswordGame</a>
+			<a href="cronometro.html">Cronometro</a>
+			<a href="colorPicker.html">Color Picker</a>
+			<a href="calculadora.html">Calculadora(CSS)</a>
+			<a href="PasswordRandom.html">PasswordRandom</a>
+			<a href="slider.html">Slider</a>
+			<a href="play.html">PlayGround</a>
+		</nav>
+	</header>
+
+	<div class="header">
+		<h2>Galeria</h2>
+	</div>
+
+	<div class="section">
+		<img class="img1" src="https://www.tuexperto.com/wp-content/uploads/2022/01/paginas-descargar-fondos-de-pantalla.jpg" alt="">
+		<img class="img2" src="https://images4.alphacoders.com/936/936378.jpg" alt="">
+		<img class="img3" src="https://www.xtrafondos.com/wallpapers/vertical/espacio-34.jpg" alt="">
+		<img class="img4" src="https://fondosmil.com/fondo/17010.jpg" alt="">
+		<img class="img5" src="https://i.pinimg.com/550x/7c/45/73/7c4573e3ddfae3ca7796498f3ca1c60f.jpg" alt="">
+		<img class="img6" src="https://www.xtrafondos.com/wallpapers/vertical/ola-de-colores-6815.jpg" alt="">
+		<img class="img7" src="https://i.pinimg.com/736x/70/fd/da/70fddaa777d55f787c14f370a6a02d93.jpg" alt="">
+		<img class="img8" src="https://fondosmil.com/fondo/17016.jpg" alt="">
+		<img class="img9" src="https://www.xtrafondos.com/descargar.php?id=6406&vertical=1" alt="">
+		<img class="img10" src="https://i.pinimg.com/originals/29/d2/04/29d20408e3568a6dd47b60b78a9490bb.jpg" alt="">
+	</div>
+
+<script>
+	const img1 = document.querySelector(".img1");
+	const img2 = document.querySelector(".img2");
+	const img3 = document.querySelector(".img3");
+	const img4 = document.querySelector(".img4");
+	const img5 = document.querySelector(".img5");
+	const img6 = document.querySelector(".img6");
+	const img7 = document.querySelector(".img7");
+	const img8 = document.querySelector(".img8");
+	const img9 = document.querySelector(".img9");
+	const img10 = document.querySelector(".img10");
+
+	const back = document.querySelector(".section");
+
+	img1.addEventListener("click",() => {
+		if(img1.style.height == "80vh" &&
+		img1.style.width == "50%") {
+			img1.style.height = "40vh";
+			img1.style.width = "20%";
+			img1.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img1.style.height = "80vh";
+			img1.style.width = "50%";
+			img1.style.position = "relative";
+			img1.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img2.addEventListener("click",() => {
+		if(img2.style.height == "80vh" &&
+		img2.style.width == "50%") {
+			img2.style.height = "40vh";
+			img2.style.width = "20%";
+			img2.style.position = "static";
+
+			img1.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img2.style.height = "80vh";
+			img2.style.width = "50%";
+			img2.style.position = "relative";
+			img2.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img1.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img3.addEventListener("click",() => {
+		if(img3.style.height == "80vh" &&
+		img3.style.width == "50%") {
+			img3.style.height = "40vh";
+			img3.style.width = "20%";
+			img3.style.position = "static";
+
+			img2.style.display = "block";
+			img1.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img3.style.height = "80vh";
+			img3.style.width = "50%";
+			img3.style.position = "relative";
+			img3.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img1.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img4.addEventListener("click",() => {
+		if(img4.style.height == "80vh" &&
+		img4.style.width == "50%") {
+			img4.style.height = "40vh";
+			img4.style.width = "20%";
+			img4.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img1.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img4.style.height = "80vh";
+			img4.style.width = "50%";
+			img4.style.position = "relative";
+			img4.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img1.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img5.addEventListener("click",() => {
+		if(img5.style.height == "80vh" &&
+		img5.style.width == "50%") {
+			img5.style.height = "40vh";
+			img5.style.width = "20%";
+			img5.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img1.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img5.style.height = "80vh";
+			img5.style.width = "50%";
+			img5.style.position = "relative";
+			img5.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img1.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img6.addEventListener("click",() => {
+		if(img6.style.height == "80vh" &&
+		img6.style.width == "50%") {
+			img6.style.height = "40vh";
+			img6.style.width = "20%";
+			img6.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img1.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img6.style.height = "80vh";
+			img6.style.width = "50%";
+			img6.style.position = "relative";
+			img6.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img1.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img7.addEventListener("click",() => {
+		if(img7.style.height == "80vh" &&
+		img7.style.width == "50%") {
+			img7.style.height = "40vh";
+			img7.style.width = "20%";
+			img7.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img1.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img7.style.height = "80vh";
+			img7.style.width = "50%";
+			img7.style.position = "relative";
+			img7.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img1.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img8.addEventListener("click",() => {
+		if(img8.style.height == "80vh" &&
+		img8.style.width == "50%") {
+			img8.style.height = "40vh";
+			img8.style.width = "20%";
+			img8.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img1.style.display = "block";
+			img9.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img8.style.height = "80vh";
+			img8.style.width = "50%";
+			img8.style.position = "relative";
+			img8.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img1.style.display = "none";
+			img9.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img9.addEventListener("click",() => {
+		if(img9.style.height == "80vh" &&
+		img9.style.width == "50%") {
+			img9.style.height = "40vh";
+			img9.style.width = "20%";
+			img9.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img1.style.display = "block";
+			img10.style.display = "block";
+		}else{
+			img9.style.height = "80vh";
+			img9.style.width = "50%";
+			img9.style.position = "relative";
+			img9.style.left = "25%";
+
+			back.style.background = "#000";
+
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img1.style.display = "none";
+			img10.style.display = "none";
+		}
+	});
+
+	img10.addEventListener("click",() => {
+		if(img10.style.height == "80vh" &&
+		img10.style.width == "50%") {
+			img10.style.height = "40vh";
+			img10.style.width = "20%";
+			img10.style.position = "static";
+
+			img2.style.display = "block";
+			img3.style.display = "block";
+			img4.style.display = "block";
+			img5.style.display = "block";
+			img6.style.display = "block";
+			img7.style.display = "block";
+			img8.style.display = "block";
+			img9.style.display = "block";
+			img1.style.display = "block";
+		}else{
+			img10.style.height = "80vh";
+			img10.style.width = "50%";
+			img10.style.position = "relative";
+			img10.style.left = "25%";
+
+			back.style.background = "#000";
+		
+			img2.style.display = "none";
+			img3.style.display = "none";
+			img4.style.display = "none";
+			img5.style.display = "none";
+			img6.style.display = "none";
+			img7.style.display = "none";
+			img8.style.display = "none";
+			img9.style.display = "none";
+			img1.style.display = "none";
+		}
+	});	
+</script>
+</body>
+</html>

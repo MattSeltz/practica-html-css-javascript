@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Piedra, Papel o Tijera</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		header{
+			height: 10vh;
+			background: linear-gradient(to right, #666, #333);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+		}
+
+		h1{
+			color: #0ff;
+			text-shadow: 2.5px 2.5px 2.5px #000;
+			transition: 2.5s;
+		}
+
+		h1:hover{
+			letter-spacing: 10px;
+		}
+
+		nav{
+			background: #000;
+			padding: 10px;
+			border-radius: 25px;
+		}
+
+		a{
+			text-decoration: none;
+			color: #0ff;
+			margin: 5px;
+			transition: .5s;
+		}
+
+		a:hover{
+			color: #fff;
+			text-shadow: 2.5px 2.5px 2.5px #0ff;
+		}
+
+		.game-container{
+			height: 90vh;
+			border: 5px solid #000;
+			background: radial-gradient(circle, #fff, #000);
+		}
+
+		.visual{
+			height: 50%;
+			border-bottom: 5px solid #000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 25px;
+			font-weight: bolder;
+			letter-spacing: 2.5px;
+			padding: 25px;
+		}
+
+		.btn{
+			height: 50%;
+			background: #000;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		button{
+			height: 100px;
+			width: 100px;
+			border-radius: 15px;
+			font-size: 15px;
+			font-weight: bolder;
+			letter-spacing: 2.5px;
+			background: #fff;
+			transition: .5s;
+			cursor: pointer;
+		}
+
+		button:hover{
+			box-shadow: 2.5px 2.5px 2.5px #fff;
+			transform: scale(1.25);
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Matías Seltzer</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="cont.html">Contador</a>
+			<a href="ran.html">Color Random</a>
+			<a href="gameSimple.html">Piedra, Papel o Tijera</a>
+			<a href="ascensor.html">Ascensor</a>
+			<a href="clickMe.html">ClickMe</a>
+			<a href="tablaMul.html">Tablas de Multiplicación</a>
+			<a href="galeria.html">Galeria</a>
+			<a href="contraseña.html">PasswordGame</a>
+			<a href="cronometro.html">Cronometro</a>
+			<a href="colorPicker.html">Color Picker</a>
+			<a href="calculadora.html">Calculadora(CSS)</a>
+			<a href="PasswordRandom.html">PasswordRandom</a>
+			<a href="slider.html">Slider</a>
+			<a href="play.html">PlayGround</a>
+		</nav>
+	</header>
+
+	<div class="game-container">
+		<div id="game" class="visual"></div>
+		<div class="btn">
+			<button onclick="piedra()">Piedra</button>
+			<button onclick="papel()">Papel</button>
+			<button onclick="tijera()">Tijera</button>
+		</div>
+	</div>
+
+<script>
+	let min = 1;
+	let max = 3;
+
+	let x = document.getElementById("game");
+
+	const piedra = () => {
+
+		let maquina = Math.floor(Math.random() * (max - min + 1) + min);
+
+		if(maquina == 1) {
+			maquina = "Piedra";
+		}else if(maquina == 2) {
+			maquina = "Papel";
+		}else{
+			maquina = "Tijera";
+		}	
+
+		if(maquina == "Piedra") {
+			x.innerHTML = (`Tu jugada fue Piedra, la de la maquina fue ${maquina}, por ende es EMPATE`);
+		}else if(maquina == "Papel") {
+			x.innerHTML = (`Tu jugada fue Piedra, la de la maquina fue ${maquina}, por ende PERDISTE`);
+		}else if(maquina == "Tijera") {
+			x.innerHTML = (`Tu jugada fue Piedra, la de la maquina fue ${maquina}, por ende GANASTE`);
+		}
+	}
+
+		const papel = () => {
+
+		let maquina = Math.floor(Math.random() * (max - min + 1) + min);
+
+		if(maquina == 1) {
+			maquina = "Piedra";
+		}else if(maquina == 2) {
+			maquina = "Papel";
+		}else{
+			maquina = "Tijera";
+		}	
+
+		if(maquina == "Piedra") {
+			x.innerHTML = (`Tu jugada fue Papel, la de la maquina fue ${maquina}, por ende GANASTE`);
+		}else if(maquina == "Papel") {
+			x.innerHTML = (`Tu jugada fue Papel, la de la maquina fue ${maquina}, por ende es EMPATE`);
+		}else if(maquina == "Tijera") {
+			x.innerHTML = (`Tu jugada fue Papel, la de la maquina fue ${maquina}, por ende PERDISTE`);
+		}
+	}
+
+		const tijera = () => {
+
+		let maquina = Math.floor(Math.random() * (max - min + 1) + min);
+
+		if(maquina == 1) {
+			maquina = "Piedra";
+		}else if(maquina == 2) {
+			maquina = "Papel";
+		}else{
+			maquina = "Tijera";
+		}	
+
+		if(maquina == "Piedra") {
+			x.innerHTML = (`Tu jugada fue Tijera, la de la maquina fue ${maquina}, por ende PERDISTE`);
+		}else if(maquina == "Papel") {
+			x.innerHTML = (`Tu jugada fue Tijera, la de la maquina fue ${maquina}, por ende GANASTE`);
+		}else if(maquina == "Tijera") {
+			x.innerHTML = (`Tu jugada fue Tijera, la de la maquina fue ${maquina}, por ende es EMPATE`);
+		}
+	}
+</script>
+</body>
+</html>

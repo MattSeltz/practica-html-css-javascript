@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tablas de multiplicación</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.header{
+			background: linear-gradient(to left,#999, #666, #333);
+			text-align: center;
+			height: 10vh;
+			line-height: 10vh;
+			letter-spacing: 2.5px;
+			font-size: 20px;
+		}
+
+		.container{
+			border: 5px solid #000;
+			height: 80vh;
+		}
+
+		.visual{
+			border-bottom: 2.5px solid #fff;
+			height: 50%;
+			background: #000;
+			color: #fff;
+			display: flex;	
+			justify-content: center;
+			align-items: center;
+			font-size: 20px;
+			font-weight: bolder;
+			letter-spacing: 2.5px;
+		}
+
+		.btn{
+			border: 5px solid #000;
+			height: 50%;
+			background: #000;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 10px;
+		}
+
+		button{
+			background: #fff;
+			border-radius: 10px;
+			box-shadow: 2.5px 2.5px 2.5px #fff;
+			font-size: 15px;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+
+		button:last-child{
+			grid-column: 1 / span 3;
+		}
+
+		button:active{
+			background: #aaa;
+			box-shadow: none;
+			transform: translate(2.5px, 2.5px);
+		}
+
+				header{
+			height: 10vh;
+			background: linear-gradient(to right, #666, #333);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+		}
+
+		h1{
+			color: #0ff;
+			text-shadow: 2.5px 2.5px 2.5px #000;
+			transition: 2.5s;
+		}
+
+		h1:hover{
+			letter-spacing: 10px;
+		}
+
+		nav{
+			background: #000;
+			padding: 10px;
+			border-radius: 25px;
+		}
+
+		a{
+			text-decoration: none;
+			color: #0ff;
+			margin: 5px;
+			transition: .5s;
+		}
+
+		a:hover{
+			color: #fff;
+			text-shadow: 2.5px 2.5px 2.5px #0ff;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Matías Seltzer</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="cont.html">Contador</a>
+			<a href="ran.html">Color Random</a>
+			<a href="gameSimple.html">Piedra, Papel o Tijera</a>
+			<a href="ascensor.html">Ascensor</a>
+			<a href="clickMe.html">ClickMe</a>
+			<a href="tablaMul.html">Tablas de Multiplicación</a>
+			<a href="galeria.html">Galeria</a>
+			<a href="contraseña.html">PasswordGame</a>
+			<a href="cronometro.html">Cronometro</a>
+			<a href="colorPicker.html">Color Picker</a>
+			<a href="calculadora.html">Calculadora(CSS)</a>
+			<a href="PasswordRandom.html">PasswordRandom</a>
+			<a href="slider.html">Slider</a>
+			<a href="play.html">PlayGround</a>
+		</nav>
+	</header>
+
+	<div class="header">
+		<h2>Tablas de multiplicar</h2>
+	</div>
+
+	<div class="container">
+		<div class="visual"></div>
+		<div class="btn">
+			<button id="t1">Tabla del 1</button>
+			<button id="t2">Tabla del 2</button>
+			<button id="t3">Tabla del 3</button>
+			<button id="t4">Tabla del 4</button>
+			<button id="t5">Tabla del 5</button>
+			<button id="t6">Tabla del 6</button>
+			<button id="t7">Tabla del 7</button>
+			<button id="t8">Tabla del 8</button>
+			<button id="t9">Tabla del 9</button>
+			<button id="t10">Tabla del 10</button>
+		</div>
+	</div>
+
+<script>
+	const visual = document.querySelector(".visual");
+
+	const t1 = document.getElementById("t1");
+	const t2 = document.getElementById("t2");
+	const t3 = document.getElementById("t3");
+	const t4 = document.getElementById("t4");
+	const t5 = document.getElementById("t5");
+	const t6 = document.getElementById("t6");
+	const t7 = document.getElementById("t7");
+	const t8 = document.getElementById("t8");
+	const t9 = document.getElementById("t9");
+	const t10 = document.getElementById("t10");
+
+	t1.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 1 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t2.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 2 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t3.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 3 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t4.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 4 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t5.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 5 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t6.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 6 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t7.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 7 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t8.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 8 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t9.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 9 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+
+	t10.addEventListener("click",() => {
+		let result = [];
+		for(let i = 1; i <= 10; i++) {
+			let res = 10 * i;
+			result.push(res);
+		}
+		visual.innerHTML = result.join("<br>");
+	});
+</script>
+</body>
+</html>

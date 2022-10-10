@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ascensor</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+				header{
+			height: 10vh;
+			background: linear-gradient(to right, #666, #333);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+		}
+
+		h1{
+			color: #0ff;
+			text-shadow: 2.5px 2.5px 2.5px #000;
+			transition: 2.5s;
+		}
+
+		h1:hover{
+			letter-spacing: 10px;
+		}
+
+		nav{
+			background: #000;
+			padding: 10px;
+			border-radius: 25px;
+		}
+
+		a{
+			text-decoration: none;
+			color: #0ff;
+			margin: 5px;
+			transition: .5s;
+		}
+
+		a:hover{
+			color: #fff;
+			text-shadow: 2.5px 2.5px 2.5px #0ff;
+		}
+
+		.header{
+			background: radial-gradient(circle, #999, #666, #333);
+			height: 10vh;
+			line-height: 10vh;
+			text-align: center;
+			letter-spacing: 2.5px;
+			text-shadow: 2.5px 2.5px 2.5px #ddd;
+			font-size: 22.5px;
+		}
+
+		section{
+			height: 80vh;
+			border: 5px solid #000;
+		}
+
+		.visualizador{
+			height: 50%;
+			border-bottom: 5px solid #000;
+			overflow: hidden;
+			display: flex;
+			background: url(https://www.eninter.com/blog/wp-content/uploads/2014/10/Diferencias-ascensores-hidraulicos.jpg);
+			background-size: cover;
+		}
+
+		.pisos{
+			background: radial-gradient(circle, #333, #666, #999);
+			height: 50%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 5px;
+			padding: 5px;
+		}
+
+		button{
+			background: #fff;
+			font-weight: bolder;
+			box-shadow: 2.5px 2.5px 2.5px #fff;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:active{
+			box-shadow: none;
+			background: #aaa;
+			transform: translate(2.5px, 2.5px);
+		}
+
+		.left{
+			background: #000;
+			height: 100%;
+			width: 50%;
+			transform: translateX(-100%);
+			position: relative;
+			z-index: 3;
+			transition: 5s;
+		}
+
+		.right{
+			background: #000;
+			height: 100%;
+			width: 50%;
+			transform: translateX(100%);
+			position: relative;
+			z-index: 3;
+			transition: 5s;
+		}
+
+		.vh{
+			text-align: center;
+			height: 250px;
+			line-height: 250px;
+			width: 50%;
+			font-weight: bolder;
+			font-size: 25px;
+			position: absolute;
+			left: 25%;		
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Matías Seltzer</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="cont.html">Contador</a>
+			<a href="ran.html">Color Random</a>
+			<a href="gameSimple.html">Piedra, Papel o Tijera</a>
+			<a href="ascensor.html">Ascensor</a>
+			<a href="clickMe.html">ClickMe</a>
+			<a href="tablaMul.html">Tablas de Multiplicación</a>
+			<a href="galeria.html">Galeria</a>
+			<a href="contraseña.html">PasswordGame</a>
+			<a href="cronometro.html">Cronometro</a>
+			<a href="colorPicker.html">Color Picker</a>
+			<a href="calculadora.html">Calculadora(CSS)</a>
+			<a href="PasswordRandom.html">PasswordRandom</a>
+			<a href="slider.html">Slider</a>
+			<a href="play.html">PlayGround</a>
+		</nav>
+	</header>
+
+	<div class="header">
+		<h2>Ascensor</h2>
+	</div>
+
+	<section>
+		<div class="visualizador">
+			<div id="l" class="left"></div>
+			<div id="piso" class="vh">Piso 0</div>
+			<div id="r" class="right"></div>
+		</div>
+		<div class="pisos">
+			<button id="btn1">Piso 1</button>
+			<button id="btn2">Piso 2</button>
+			<button id="btn3">Piso 3</button>
+			<button id="btn4">Piso 4</button>
+			<button id="btn5">Piso 5</button>
+			<button id="btn6">Piso 6</button>
+			<button id="btn7">Piso 7</button>
+			<button id="btn8">Piso 8</button>
+			<button id="btn9">Piso 9</button>
+			<button id="btn10">Piso 10</button>
+			<button id="btn11">Piso 11</button>
+			<button id="btn12">Piso 12</button>
+		</div>
+	</section>
+
+<script>
+	let piso = document.getElementById("piso");
+	let left = document.getElementById("l");
+	let right = document.getElementById("r");
+
+	let p1 = document.getElementById("btn1").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 1";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p2 = document.getElementById("btn2").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 2";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p3 = document.getElementById("btn3").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 3";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p4 = document.getElementById("btn4").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 4";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p5 = document.getElementById("btn5").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 5";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p6 = document.getElementById("btn6").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 6";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p7 = document.getElementById("btn7").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 7";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p8 = document.getElementById("btn8").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 8";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p9 = document.getElementById("btn9").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 9";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p10 = document.getElementById("btn10").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 10";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p11 = document.getElementById("btn11").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 11";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+	let p12 = document.getElementById("btn12").addEventListener("click",() => {
+		left.style.transform = "translateX(0%)";
+		right.style.transform = "translateX(0%)";
+		setTimeout(() => {
+			piso.innerHTML = "Piso 12";
+			left.style.transform = "translateX(-100%)";
+			right.style.transform = "translateX(100%)";
+		},5000);
+	});
+
+</script>
+</body>
+</html>
